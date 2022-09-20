@@ -1,0 +1,16 @@
+Given:
+1. City, Street, Avenue, Value
+2. Day, City, Desired time, Start hour, End hour
+
+Objective:
+Maximize sum of values of cities visited
+
+How to do it:
+1. Create a list of cities for each day
+2. Plot them out on a 2d plane
+3. Add a 3rd dimension - time - with start and end hours
+4. Now we have lines in a 3d plane. Try to form clusters using these lines. How? Try to ensure that each cluster has similar value and that a cluster has lines closer in space and time
+5. For each day you would have a set of clusters. The # of clusters would be the one with which the entropy is minimized.
+6. Now, iterate over the all possible combinations of the clusters over all the days and select top few feasible combinations with the highest values
+7. Now, for each combination, for each cluster, run a greedy algorithm over the cluster that chooses the nearest city
+8. Select the best one from all the combinations, return it as the answer
